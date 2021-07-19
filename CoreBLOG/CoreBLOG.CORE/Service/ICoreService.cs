@@ -13,6 +13,7 @@ namespace CoreBLOG.CORE.Service
         bool Update(T item);
         bool Remove(T item);
         bool Remove(Guid id);
+        bool Any(Expression<Func<T, bool>> exp);
         bool RemoveAll(Expression<Func<T, bool>> exp); // Verilen linq ifadesine uygun olarak işlem yapar
         T GetByID(Guid id);
         T GetByDefault(Expression<Func<T, bool>> exp); // Verilen linq ifadesindeki koşullara göre sonuç döndürür
