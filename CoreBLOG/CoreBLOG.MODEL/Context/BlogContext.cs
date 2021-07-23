@@ -32,7 +32,7 @@ namespace CoreBLOG.MODEL.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.; database=BlogDB; uid=sa; pwd=123");
+            optionsBuilder.UseSqlServer("server=.; database=BlogProjeDB; uid=sa; pwd=123");
 
             base.OnConfiguring(optionsBuilder);
         }

@@ -57,9 +57,6 @@ namespace CoreBLOG.MODEL.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -100,9 +97,6 @@ namespace CoreBLOG.MODEL.Migrations
                     b.Property<string>("ModifiedIP")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<Guid?>("PostID")
                         .HasColumnType("uniqueidentifier");
@@ -155,9 +149,6 @@ namespace CoreBLOG.MODEL.Migrations
                     b.Property<string>("ModifiedIP")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<string>("PostDetail")
                         .IsRequired()
@@ -243,9 +234,6 @@ namespace CoreBLOG.MODEL.Migrations
                     b.Property<string>("ModifiedIP")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .IsRequired()

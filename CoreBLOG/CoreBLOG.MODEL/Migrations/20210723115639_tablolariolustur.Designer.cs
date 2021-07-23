@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreBLOG.MODEL.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20210719111330_initial")]
-    partial class initial
+    [Migration("20210723115639_tablolariolustur")]
+    partial class tablolariolustur
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,9 +59,6 @@ namespace CoreBLOG.MODEL.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -102,9 +99,6 @@ namespace CoreBLOG.MODEL.Migrations
                     b.Property<string>("ModifiedIP")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<Guid?>("PostID")
                         .HasColumnType("uniqueidentifier");
@@ -157,9 +151,6 @@ namespace CoreBLOG.MODEL.Migrations
                     b.Property<string>("ModifiedIP")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<string>("PostDetail")
                         .IsRequired()
@@ -245,9 +236,6 @@ namespace CoreBLOG.MODEL.Migrations
                     b.Property<string>("ModifiedIP")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .IsRequired()

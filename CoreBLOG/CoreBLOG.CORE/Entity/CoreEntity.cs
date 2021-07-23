@@ -12,7 +12,6 @@ namespace CoreBLOG.CORE.Entity
 
         public Guid ID { get; set; }
         public Status Status { get; set; }
-        public int MyProperty { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string CreatedIP { get; set; }
         public string CreatedComputerName { get; set; }

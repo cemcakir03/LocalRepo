@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CoreBLOG.MODEL.Migrations
 {
-    public partial class initial : Migration
+    public partial class tablolariolustur : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,6 @@ namespace CoreBLOG.MODEL.Migrations
                     CategoryName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    MyProperty = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedIP = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
@@ -42,7 +41,6 @@ namespace CoreBLOG.MODEL.Migrations
                     LastLogin = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastIpAdress = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    MyProperty = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedIP = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
@@ -68,7 +66,6 @@ namespace CoreBLOG.MODEL.Migrations
                     CategoryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    MyProperty = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedIP = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
@@ -102,7 +99,6 @@ namespace CoreBLOG.MODEL.Migrations
                     UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     PostID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    MyProperty = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedIP = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     CreatedComputerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
