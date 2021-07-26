@@ -9,6 +9,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreBLOG.MODEL\CoreBLOG.MODEL.csproj" />
+    <ProjectReference Include="..\CoreBLOG.SERVICE\CoreBLOG.SERVICE.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Administrator\Data\" />
+    <Folder Include="Areas\Administrator\Models\" />
   </ItemGroup>
 
 </Project>

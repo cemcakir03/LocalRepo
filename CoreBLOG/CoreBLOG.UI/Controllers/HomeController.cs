@@ -6,33 +6,60 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CoreBLOG.UI.Models;
+using CoreBLOG.CORE.Service;
+using CoreBLOG.MODEL.Entities;
 
 namespace CoreBLOG.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ICoreService<Category> cs;
+        private readonly ICoreService<Post> ps;
+        private readonly ICoreService<User> us;
+        private readonly ICoreService<Comment> cms;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ICoreService<Category> _cs, ICoreService<Post> _ps, ICoreService<User> _us, ICoreService<Comment> _cms)
         {
-            _logger = logger;
+            cs = _cs;
+            ps = _ps;
+            us = _us;
+            cms = _cms;
         }
 
         public IActionResult Index()
         {
-            return View();
+            ViewBag.Categories = cs.GetActive();
+            return View(ps.GetActive());
         }
 
-        public IActionResult Privacy()
+        public IActionResult PostByCategoryID(Guid id)
         {
-            return View();
+            ViewBag.Categories = cs.GetActive();
+            return View(ps.GetDefault(x => x.CategoryID == id).ToList());
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Post(Guid id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            //Verilen idye göre Post'u bul, görüntülenmesini 1 artır ve veritabanına kaydet.
+            Post post = ps.GetByID(id);
+            post.ViewCount++;
+            ps.Update(post);
+
+            return View(Tuple.Create<Post, User,Category ,List<Category>, List<Comment>>(post,us.GetByID(post.UserID),cs.GetByID(post.CategoryID),cs.GetActive(),cms.GetDefault(x => x.Post.ID==id)));
         }
+
+        
+
+        //public IActionResult Privacy()
+        //{
+        //    return View();
+        //}
+
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
        
     }
 }
